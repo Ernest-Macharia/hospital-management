@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Management System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+      <h1 style="margin-left:120px;">Registered Patients</h1>
+        <ul class="breadcrumb">
+            <li><a class="btn btn-info" href="{% url 'home' %}">Home</a></li>
+            <li><a class="btn btn-info" style="margin-left:5px;" href="{% url 'dashboard' %}">Dashboard</a></li>
+            <a href="{% url 'login' %}"><button class="btn btn-info" style="margin-left:5px;">Log Out</button></a>
+        </ul>
+
+<table class="table table-striped" id="tabledel">
+
+  <thead class="boarder-bottom font-weight-bold">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">email</th>
+      <th scope="col">Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for doc in view_receptionist %}
+      <tr>
+      <th scope="row">{{doc.id}}</th>
+      <td>{{doc.Name}}</td>
+      <td>{{doc.Phone}}</td>
+      <td>{{doc.email}}</td>
+      <td>{{doc.gender}}</td>
+
+        
+        <!--<td><a class="btn btn-danger" href="#" onclick="myFunction()">Delete Profile</a></td>-->
+    </tr>
+
+
+  {% endfor %}
+
+  </tbody>
+</table>
+<a class="btn btn-success" href="{% url 'add_patient' %}">Add Patient</a>
+    </div>
+    <!--<script>-->
+        <!--function myFunction(){-->
+            <!--document.getElementById("tabledel").deleteRow(0);-->
+        <!--}-->
+    <!--</script>-->
+</body>
+</html>

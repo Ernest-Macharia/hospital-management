@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+
+{% block content%}
+    <div class="jumbotron">
+    
+
+{% if form.errors %}
+
+    <p>Your username and password should not match.Please try again </p>
+
+{% endif %}
+
+<h2 style="margin-left:120px;">Book Appointment</h2>
+<ul class="breadcrumb">
+            
+            <li><a class="btn btn-info" style="margin-left:5px;" href="{% url 'dashboard' %}">Dashboard</a></li>
+            <a href="{% url 'login' %}"><button class="btn btn-info" style="margin-left:5px;">Log Out</button></a>
+            
+        </ul>
+    <form class="form-group" method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+               
+                    <div class="row padding-top-10" style="margin-top:10px;">
+                        <div class="col-md-2">
+                            <button class="btn btn-success" name="submit" type="submit"><i class="fas fa-database"></i>Submit</button>
+                        </div>
+                    </div>
+        
+
+    </form>
+
+
+</div>
+
+{% endblock %}
