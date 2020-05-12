@@ -13,19 +13,11 @@
 </head>
 
 <body>
-<div class="loader">
-<div class="jumbotron text-center">
-    <h1>PATIENT MANAGEMENT SYSTEM</h1>
-</div><div class="content container">
-<div class="row">
-                <div class="col-md-8">
-                    <div class="blog_posts">
+
+                        {% include 'nav.html' %}
                         {% block content %}
                         {% endblock %}
-                    </div>
-                </div>
-            </div>
-        </div>
+              
 
 
 </div>

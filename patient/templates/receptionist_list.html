@@ -1,17 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Patient Management System</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
     <div class="container">
       <h1 style="margin-left:120px;">Registered Patients</h1>
         <ul class="breadcrumb">
@@ -51,10 +40,5 @@
 </table>
 <a class="btn btn-success" href="{% url 'add_patient' %}">Add Patient</a>
     </div>
-    <!--<script>-->
-        <!--function myFunction(){-->
-            <!--document.getElementById("tabledel").deleteRow(0);-->
-        <!--}-->
-    <!--</script>-->
-</body>
-</html>
+
+{% endblock %}

@@ -1,37 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Patient Management System</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="{% url 'dashboard' %}">PMS</a>
-        </div>
-          <ul class="nav navbar-nav">
-          
-        <ul class="nav navbar-nav navbar-left">
-            <li><a href='http://127.0.0.1:8000/admin'><span class="glyphicon glyphicon-log-in"> Admin Login</span></a></li></ul>
-            <li><a href="{% url 'receptionist' %}"><span class="glyphicon glyphicon-user"></span> Receptionist</a></li>
-            <li><a href="{% url 'doctor' %}"><span class="glyphicon glyphicon-user"></span> Doctor</a></li>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{% url 'phamarcist' %}"><span class="glyphicon glyphicon-user"></span> Phamarcist</a></li>
-            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
-        </ul>
-    </ul>
 
-      </div>
-
-
-    </nav>
 <body>
     <div class="container">
       <h1 style="margin-left:120px;">Registered Doctors</h1>
@@ -74,10 +44,5 @@
 </table>
 <a class="btn btn-success" href="{% url 'add_doctor' %}">Add Doctor</a>
     </div>
-    <!--<script>-->
-        <!--function myFunction(){-->
-            <!--document.getElementById("tabledel").deleteRow(0);-->
-        <!--}-->
-    <!--</script>-->
-</body>
-</html>
+
+{% endblock %}
